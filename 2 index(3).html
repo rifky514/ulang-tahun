@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun ke-17</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe4f5, #e6f7ff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .page {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .page.active {
+            display: block;
+        }
+        .card {
+            margin: 0 auto;
+            width: 90%;
+            max-width: 600px;
+            background: linear-gradient(to bottom right, #ffdde1, #d7e3fc);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #ff4081;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px #ffd1dc;
+        }
+        h2 {
+            color: #80b3ff;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #555;
+        }
+        .emoji {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 30px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #e73570;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Halaman 1 -->
+    <div class="page active" id="page1">
+        <div class="card">
+            <h1>Selamat Ulang Tahun ke-17! 🎉</h1>
+            <h2>Untuk Perempuan Istimewa</h2>
+            <p>
+                Hari ini, hari spesialmu! Ulang tahun ke-17 adalah langkah baru menuju masa depan yang penuh cahaya dan harapan.
+            </p>
+            <div class="emoji">🎂🎈✨</div>
+            <button onclick="nextPage()">Selanjutnya</button>
+        </div>
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="page" id="page2">
+        <div class="card">
+            <h1>Doa Terindah untuk Kamu</h1>
+            <p>
+                Semoga semua impianmu menjadi kenyataan, langkahmu selalu dimudahkan, dan kebahagiaan senantiasa menyertaimu.
+            </p>
+            <p>
+                Kamu adalah sosok istimewa yang selalu membawa senyum dan kebahagiaan bagi orang-orang di sekitarmu. 🌸
+            </p>
+            <div class="emoji">💖🌟🌷</div>
+            <button onclick="nextPage()">Selanjutnya</button>
+        </div>
+    </div>
+
+    <!-- Halaman 3 -->
+    <div class="page" id="page3">
+        <div class="card">
+            <h1>Pesan dari Sahabatmu</h1>
+            <p>
+                Terima kasih sudah menjadi dirimu yang selalu ceria, kuat, dan penuh semangat. Dunia lebih indah karena ada kamu.
+            </p>
+            <p>
+                Semoga di umur ke-17 ini, kamu menemukan kebahagiaan di setiap langkah dan kenangan yang tak terlupakan. 💕
+            </p>
+            <div class="emoji">💌🎁🌈</div>
+            <button onclick="nextPage()">Ulangi</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function showPage(pageNumber) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach((page, index) => {
+                if (index + 1 === pageNumber) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+        }
+
+        function nextPage() {
+            currentPage = currentPage < totalPages ? currentPage + 1 : 1;
+            showPage(currentPage);
+        }
+    </script>
+</body>
+</html>
